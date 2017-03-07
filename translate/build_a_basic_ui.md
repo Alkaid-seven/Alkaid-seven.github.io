@@ -35,3 +35,56 @@
 Xcode有几个内置的应用程序模板，用于开发常见类型的iOS应用程序，例如游戏，基于标签的导航应用程序和基于表视图的应用程序。大多数这些模板具有预配置的接口和源代码文件。在本课中，你将从最基本的模板开始：Single View Application。
 >Xcode includes several built-in app templates for developing common types of iOS apps, such as games, apps with tab-based navigation, and table view-based apps. Most of these templates have preconfigured interface and source code files. For this lesson, you’ll start with the most basic template: Single View Application.
 
+###Review the Source Code
+
+单一视图应用程序模板包含几个设置app环境的源代码文件。首先，看看AppDelegate.swift文件。
+>The Single View Application template comes with a few source code files that set up the app environment. First, take a look at the AppDelegate.swift file.
+
+####The App Delegate Source File
+
+AppDelegate.swift 源文件有两个主要的方法：
+>The AppDelegate.swift source file has two primary functions:
+
+ 1.它定义了你的AppDelegate(委托)类。应用程式委托建立应用程式内容绘制的窗口，并提供位置回应app状态转换。
+
+ 2.它创建app的的入口点，运行一个提供输入事件进入app的循环。此工作由UIApplicationMain属性（@UIApplicationMain）完成，该属性显示在文件的顶部。
+> 1. It defines your AppDelegate class. The app delegate creates the window where your app’s content is drawn and provides a place to respond to state transitions within the app.
+
+> 2. It creates the entry point to your app and a run loop that delivers input events to your app. This work is done by the UIApplicationMain attribute (@UIApplicationMain), which appears toward the top of the file.
+
+使用UIApplicationMain属性等效于调用UIApplicationMain函数,并将AppDelegate类的名称作为委托类的名称。作为响应，系统创建应用程序对象。应用程序对象负责管理应用程序的生命周期。系统还会创建AppDelegate类的实例，并将其分配给应用程序对象。最后，系统启动您的应用程序。
+>Using the UIApplicationMain attribute is equivalent to calling the UIApplicationMain function and passing your AppDelegate class’s name as the name of the delegate class. In response, the system creates an application object. The application object is responsible for managing the life cycle of the app. The system also creates an instance of your AppDelegate class, and assigns it to the application object. Finally, the system launches your app.
+
+
+AppDelegate类在您创建新项目时自动创建。除非你做非常不寻常的事情，否则应该使用Xcode提供的这个类来初始化你的app并响应app级事件。 AppDelegate类采用UIApplicationDelegate协议。此协议定义了许多方法，用于设置您的app，响应app的状态更改，以及处理其他app级事件。
+>The AppDelegate class is automatically created whenever you create a new project. Unless you are doing something highly unusual, you should use this class provided by Xcode to initialize your app and respond to app-level events. The AppDelegate class adopts the UIApplicationDelegate protocol. This protocol defines a number of methods you use to set up your app, to respond to the app’s state changes, and to handle other app-level events.
+
+AppDelegate类包含单一个单属性：window。
+>The AppDelegate class contains a single property: window.
+
+此属性存储一个对app窗口的引用。此窗口表示app视图层次结构的根。这是您的app所有内容绘制的地方。注意，window属性是可选的，这意味着它在某些时候可能没有值（be nil）。
+>This property stores a reference to the app’s window. This window represents the root of your app’s view hierarchy. It is where all of your app content is drawn. Note that the window property is an optional, which means it may have no value (be nil) at some point.
+
+AppDelegate类还包含以下代理方法的stub实现：
+>The AppDelegate class also contains stub implementations of the following delegate methods:
+
+```
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
+func applicationWillResignActive(_ application: UIApplication)
+func applicationDidEnterBackground(_ application: UIApplication)
+func applicationWillEnterForeground(_ application: UIApplication)
+func applicationDidBecomeActive(_ application: UIApplication)
+func applicationWillTerminate(_ application: UIApplication)
+```
+
+这些方法让应用程序对象与app委托进行通信。在应用程序状态转换期间（例如，app启动，转换到后台和app终止），应用程序对象调用相应的委托方法，从而为您的app提供响应机会。你不需要执行任何特殊操作，以确保这些方法在正确的时间调用 - 应用程序对象为你处理该作业。
+>These methods let the application object communicate with the app delegate. During an app state transition—for example, app launch, transitioning to the background, and app termination—the application object calls the corresponding delegate method, giving your app an opportunity to respond. You don’t need to do anything special to make sure these methods get called at the correct time—the application object handles that job for you.
+
+每个委托方法都有一个默认行为。如果你不去实现模板或从AppDelegate类中删除它，无论什么时候调用该方法，都会获得默认行为。或者，您可以向stub方法添加自己的代码，使调用方法时执行的自定义行为。
+>Each of the delegate methods has a default behavior. If you leave the template implementation empty or delete it from your AppDelegate class, you get the default behavior whenever that method is called. Alternatively, you can add your own code to the stub methods, defining custom behaviors that are executed when the methods are called.
+
+模板还为每个存根方法提供注释。这些注释描述你的app如何使用这些方法。你可以使用stub方法和注释作为设计许多常见app级行为的蓝图。
+>The template also provides comments for each of the stub methods. These comments describe how these methods can be used by your app. You can use the stub methods and comments as a blueprint for designing many common app-level behaviors.
+
+在本课程中，您不会使用任何自定义app委托代码，因此您不必对AppDelegate.swift文件进行任何更改。
+>In this lesson, you won’t be using any custom app delegate code, so you don’t have to make any changes to the AppDelegate.swift file.
