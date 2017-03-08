@@ -88,3 +88,18 @@ func applicationWillTerminate(_ application: UIApplication)
 
 在本课程中，您不会使用任何自定义app委托代码，因此您不必对AppDelegate.swift文件进行任何更改。
 >In this lesson, you won’t be using any custom app delegate code, so you don’t have to make any changes to the AppDelegate.swift file.
+
+####The View Controller Source File
+
+
+单一视图app模板有另一个源代码文件：ViewController.swift。在项目导航器中选择ViewController.swift以查看它。
+>The Single View Application template has another source code file: ViewController.swift. Select ViewController.swift in the project navigator to view it.
+
+这个文件定义了一个名为ViewController的UIViewController的自定义子类。现在，这个类简单地继承了UIViewController定义的所有行为。要覆盖或扩展该行为，你可以覆盖在UIViewController上定义的方法。
+>This file defines a custom subclass of UIViewController named ViewController. Right now, this class simply inherits all the behavior defined by UIViewController. To override or extend that behavior, you override the methods defined on UIViewController.
+
+正如你可以在ViewController.swift文件中看到的，模板的实现覆盖viewDidLoad 和didReceiveMemoryWarning 方法;然而，模板的sub实现除了调用这些方法的UIViewController版本外不执行任何操作。您可以添加自己的代码以自定义视图控制器对这些事件的响应。
+>As you can see in the ViewController.swift file, the template’s implementation overrides both the viewDidLoad() and didReceiveMemoryWarning() methods; however, the template’s stub implementation doesn’t do anything yet, except call the UIViewController version of these methods. You can add your own code to customize the view controller’s response to these events.
+
+虽然模板自带了didReceiveMemoryWarning 方法，但您不需要在这些课程中实现它，因此请继续并删除它。
+>Although the template comes with the didReceiveMemoryWarning() method, you won’t need to implement it in these lessons, so go ahead and delete it.
