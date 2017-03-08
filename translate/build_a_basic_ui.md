@@ -91,7 +91,6 @@ func applicationWillTerminate(_ application: UIApplication)
 
 ####The View Controller Source File
 
-
 单一视图app模板有另一个源代码文件：ViewController.swift。在项目导航器中选择ViewController.swift以查看它。
 >The Single View Application template has another source code file: ViewController.swift. Select ViewController.swift in the project navigator to view it.
 
@@ -103,3 +102,9 @@ func applicationWillTerminate(_ application: UIApplication)
 
 虽然模板自带了didReceiveMemoryWarning 方法，但您不需要在这些课程中实现它，因此请继续并删除它。
 >Although the template comes with the didReceiveMemoryWarning() method, you won’t need to implement it in these lessons, so go ahead and delete it.
+
+
+###Open Your Storyboard
+
+你已经准备好从你的app的故事板开始学习了。首先，故事板是app的用户界面的可视化表示，显示内容的屏幕和它们之间的过渡。你使用故事板来设计驱动你的app的流程或故事。您可以在构建它时准确地了解自己正在构建的内容，即时了解哪些是有效的，哪些不可用，并对您的用户界面进行即时可见的更改。
+>You’re ready to start working on a storyboard for your app. A storyboard is a visual representation of the app’s user interface, showing screens of content and the transitions between them. You use storyboards to lay out the flow—or story—that drives your app. You see exactly what you're building while you’re building it, get immediate feedback about what’s working and what’s not, and make instantly visible changes to your user interface.
