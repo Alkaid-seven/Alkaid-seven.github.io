@@ -38,11 +38,17 @@ Blink 第三次请求脚本时，请求没有过期，则直接从浏览器中�
 
 ![cache sample](./cache-sample.png)
 
-In-memory cache 和 on-disk cache 的实现细节在：
 
-如何跟踪调试：
 
-V8 如何做到字节码与上下文无关：
+TODO:
+
+In-memory cache 和 on-disk cache 的实现细节
+
+如何跟踪调试
+
+Js developer take action
+
+V8 如何做到字节码与上下文无关
 
 
 
