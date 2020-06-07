@@ -32,8 +32,6 @@ on-disk code cache 是通过 Blink 来管理的，而 Blink 则利用 HTTP 缓�
 
 ![cache sample](./cache-sample.png)
 
-
-
 In-memory cache 和 on-disk cache 的实现细节在：
 
 如何跟踪调试：
