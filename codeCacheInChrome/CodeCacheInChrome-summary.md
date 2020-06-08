@@ -8,7 +8,7 @@
 
 ![time of js execution](./time_of_js_execution.png)
 
-V8 通过JIT执行代码，是指执行JS代码之前，需将其解析成AST，编译成字节码，然后再执行，这是个开销相当大的过程。如上图所示，解析和编译过程花费的时间超过了整个js执行花费时间的三分之一。由于编译代码高度[依赖编译时机器的状态和上下文]()，所以一旦离开该页面，该编译代码即被丢弃，但是下次再遇到同样JS代码，又会重复该过程。因此V8选择将编译结果缓存起来，下次执行相同脚本时，即从缓存中读取，从而跳过编译解析过程，加快执行速度，减少计算开销。与此同时也增加了内存开销，所以浏览器会采取相应的策略来平衡这些。
+V8 通过JIT执行代码，是指执行JS代码之前，需将其解析成AST，编译成字节码，然后再执行，这是个开销相当大的过程。如上图所示，解析和编译过程花费的时间超过了整个js执行花费时间的三分之一。由于编译代码高度依赖编译时机器的状态和上下文，所以一旦离开该页面，该编译代码即被丢弃，但是下次再遇到同样JS代码，又会重复该过程。因此V8选择将编译结果缓存起来，下次执行相同脚本时，即从缓存中读取，从而跳过编译解析过程，加快执行速度，减少计算开销。与此同时也增加了内存开销，所以浏览器会采取相应的策略来平衡这些。
 
 ###In-memory Cache
 
@@ -50,7 +50,15 @@ Js developer take action
 
 V8 如何做到字节码与上下文无关
 
+https://blog.chromium.org/2015/03/new-javascript-techniques-for-rapid.html
 
+https://v8.dev/blog/code-caching
+
+https://v8.dev/blog/code-caching-for-devs
+
+https://v8.dev/blog/improved-code-caching
+
+https://www.youtube.com/watch?v=YqHOUy2rYZ8
 
 ###资源：
 
